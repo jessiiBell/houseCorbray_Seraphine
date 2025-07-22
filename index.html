@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eragon Corbray</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1b1b1b;
+      color: #e5e5e5;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .ficha-container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: #2b2b2b;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #000;
+      border: 2px solid #444;
+      outline: 2px solid #8c1a1a;
+      outline-offset: 8px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      align-items: center;
+      background-color: #1b1b1b;
+      background-image: url(https://lossietereinos.com/wp-content/uploads/2014/10/the_vale_of_arryn__by_muffinjh-d6czzh1.jpg);
+      border-bottom: 2px solid #8c1a1a;
+    }
+    .header img {
+      width: 220px;
+      border-radius: 10px;
+      border: 3px solid #8c1a1a;
+      box-shadow: 0 0 10px #000;
+    }
+    .header-info {
+      flex-grow: 1;
+      text-align: center;
+    }
+    .header-info h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      color: #dfdcdc;
+      text-shadow: 0 0 5px #8c1a1a;
+      margin-bottom: 5px;
+    }
+    .header-info h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #b03c3c;
+      text-shadow: 0 0 5px #dfdcdc;
+      margin-bottom: 15px;
+    }
+    .quote {
+      font-style: italic;
+      text-align: center;
+      margin-top: 10px;
+      color: #dfdcdc;
+      text-shadow: 0 0 5px #8c1a1a;
+    }
+    .panel-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #1b1b1b;
+      border-bottom: 1px solid #444;
+    }
+    .panel-buttons button {
+      background-color: #8c1a1a;
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 14px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      box-shadow: inset 0 -2px 0 #411;
+    }
+    .panel-buttons button:hover {
+      background-color: #b03c3c;
+    }
+    .panel-section {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 0.5s ease;
+      margin: 15px;
+      border-radius: 8px;
+      background-color: #2b2b2b;
+      box-shadow: 0 0 10px #000 inset;
+      border: 1px solid #444;
+      outline: 1px solid #8c1a1a;
+      outline-offset: -6px;
+    }
+    .panel-section.active {
+      display: block;
+    }
+    .panel-section h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      color: #dfdcdc;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 0 3px #8c1a1a;
+    }
+    .panel-section p, .panel-section ul {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .panel-section ul {
+      padding-left: 20px;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @media screen and (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header img {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ficha-container">
+
+  <!-- Encabezado -->
+  <div class="header">
+    <img src="eragon.jpeg" alt="Eragon Corbray">
+    <div class="header-info">
+      <h1>Eragon Corbray</h1>
+      <h2>Nuevo señor de la Casa Corbray</h2>
+      <div class="quote">“Férrea es nuestra vigilancia. Implacable es nuestra espada.”</div>
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="panel-buttons">
+    <button onclick="showPanel('offrol')">Off-Rol</button>
+    <button onclick="showPanel('onrol')">On-Rol</button>
+    <button onclick="showPanel('historia')">Historia</button>
+    <button onclick="showPanel('apariencia')">Apariencia</button>
+    <button onclick="showPanel('personalidad')">Personalidad</button>
+    <button onclick="showPanel('habilidades')">Habilidades</button>
+    <button onclick="showPanel('inventario')">Inventario</button>
+    <button onclick="showPanel('historial')">Historial</button>
+  </div>
+
+  <!-- Secciones -->
+  <div id="offrol" class="panel-section active">
+    <h3>Información Off-Rol</h3>
+    <ul>
+      <li><b>Usuario:</b> Epuche</li>
+      <li><b>Tipo de cuenta:</b> Primaria</li>
+      <li><b>Ingreso:</b> 10/07/2025</li>
+      <li><b>Creación:</b> 10/07/2025</li>
+      <li><b>Rango:</b> I</li>
+      <li><b>Estadísticas:</b> VIT: 200 | EN: 105 | FUE: 10 | DES: 11 | VEL: 5</li>
+      <li><b>Rasgos:</b> Atlético (+5% DES y EN), Audaz, Templado, Orgulloso</li>
+    </ul>
+  </div>
+
+  <div id="onrol" class="panel-section">
+    <h3>Información On-Rol</h3>
+    <ul>
+      <li><b>Región:</b> El Valle</li>
+      <li><b>Edad:</b> 20 años</li>
+      <li><b>Sexo:</b> Masculino</li>
+      <li><b>Casa:</b> Corbray</li>
+      <li><b>Cargo:</b> ✦ Señor de la Casa</li>
+    </ul>
+  </div>
+
+  <div id="historia" class="panel-section">
+    <h3>Historia</h3>
+    <p>
+      Hijo legítimo de Arston Corbray, señor anterior de Hogar, Eragon fue criado con todos los deberes y privilegios de un heredero de sangre pura del Valle. 
+      Desde su infancia, se le educó con severidad en los valores que definen a su casa: honor, tradición, autocontrol y la disposición a empuñar la espada por lo que es justo. 
+      Sin embargo, nunca fue tratado con dulzura. Los errores no se corrigen con palabras… sino con cicatrices.
+    </p>
+    <p>
+      A los 20 años, tras la sorpresiva emboscada en la que su padre fue asesinado por bandidos al servicio de Oswyck, Eragon asumió el liderazgo. 
+      El luto aún ardía en su pecho cuando fue obligado a desafiar en duelo a un caballero que cuestionó su legitimidad. Salió vencedor. Desde entonces, es temido por unos y respetado por otros. 
+      Su juventud se impone a fuerza de espada y temple.
+    </p>
+  </div>
+
+  <div id="apariencia" class="panel-section">
+    <h3>Apariencia</h3>
+    <p>
+      Eragon Corbray es un joven de veinte años, de estatura algo superior al promedio y cuerpo atlético, marcado por años de entrenamiento constante. 
+      Su rostro tiene rasgos definidos: pómulos altos, mandíbula firme y ojos marrones intensos que reflejan calma y determinación. Lleva el cabello castaño oscuro hasta los hombros, generalmente despeinado pero cuidado, y a veces una leve barba. Su piel, curtida por el sol del Valle, mantiene una apariencia limpia, y su vestimenta sobria, 
+      en tonos oscuros, deja claro que es un noble hecho para la guerra más que para el lujo.
+    </p>
+  </div>
+
+  <div id="personalidad" class="panel-section">
+    <h3>Personalidad</h3>
+    <p>
+      Eragon Corbray es un joven señor sereno y decidido, con un fuerte sentido del deber y el honor. 
+      No es frío, pero rara vez muestra abiertamente sus emociones; demuestra afecto a través de la lealtad y el cuidado silencioso, especialmente hacia sus hermanas y quienes luchan a su lado. 
+      Reflexivo y firme, prefiere pensar antes de actuar y no tolera la debilidad en sí mismo. Aunque es orgulloso, no es arrogante, 
+      y su liderazgo se basa más en el ejemplo que en las palabras.
+    </p>
+  </div>
+
+  <div id="habilidades" class="panel-section">
+    <h3>Habilidades</h3>
+    <ul>
+      <li><b>Habilidad primaria:</b> ✦ [Nombre de la Rama] – Descripción</li>
+      <li><b>Habilidad secundaria:</b> ✦ [Nombre de la Rama] – Descripción</li>
+      <li><b>Habilidades básicas:</b>
+        <ul>
+          <li>[Habilidad 1]</li>
+          <li>[Habilidad 2]</li>
+        </ul>
+      </li>
+      <li><b>Pasivas:</b>
+        <ul>
+          <li>[Nombre de pasiva] – Descripción breve</li>
+        </ul>
+      </li>
+      <li><b>Activas:</b>
+        <ul>
+          <li>[Habilidad activa 1] – Descripción breve</li>
+          <li>[Habilidad activa 2] – Descripción breve</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="inventario" class="panel-section">
+    <h3>Inventario</h3>
+    <ul>
+      <li>¿?</li>
+      <li>¿?</li>
+      <li>¿?</li>
+      <li><b>Monedas:</b> [Cantidad]</li>
+    </ul>
+  </div>
+
+  <div id="historial" class="panel-section">
+    <h3>Historial</h3>
+    <ul>
+      <li>[00/00/00] — Evento importante o acción destacada</li>
+      <li>[00/00/00] — Ascenso o cambio de título</li>
+    </ul>
+  </div>
+</div> <!-- cierra .ficha-container -->
+
+<script>
+  function showPanel(id) {
+    document.querySelectorAll('.panel-section').forEach(panel => {
+      panel.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+
+  
+  
+  
